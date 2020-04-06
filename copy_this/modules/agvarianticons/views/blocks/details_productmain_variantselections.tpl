@@ -1,0 +1,1 @@
+[{include file="page/details/inc/variantselections.tpl"}]
