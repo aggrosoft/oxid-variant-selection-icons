@@ -1,7 +1,6 @@
 <?php
 
 	class agvarianticons_oxselection extends agvarianticons_oxselection_parent{
-	
 
 		protected $_sIcon;
 		protected $_sIcon2;

@@ -28,7 +28,11 @@
                 [{foreach from=$oSelections item=oSelection}]
                 <li class="[{if $oSelection->isDisabled()}] disabled js-disabled[{/if}] list-inline-item">
                     <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn [{if $oSelection->isActive()}] btn-outline-primary[{else}]btn-outline-light[{/if}]">
+                        [{if $sSelType === 'seldrop'}]
+                        [{$oSelection->getName()}]
+                        [{else}]
                         <img src="[{$oSelection->getIcon()}]" alt="[{$oSelection->getName()}]" title="[{$oSelection->getName()}]" class="img-fluid variantlisticon" />
+                        [{/if}]
                     </a>
                 </li>
                 [{/foreach}]
