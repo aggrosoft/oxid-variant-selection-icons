@@ -6,9 +6,9 @@
         <p class="variant-label"><strong>[{$oSelectionList->getLabel()}][{oxmultilang ident="COLON"}]</strong></p>
         [{/if}]
         <div class="dropdown">
+            [{assign var="oActiveSelection" value=$oSelectionList->getActiveSelection()}]
             [{if $editable === false}]
             <button type="button" class="btn btn-outline-dark btn-sm dropdown-toggle" data-toggle="dropdown">
-                [{assign var="oActiveSelection" value=$oSelectionList->getActiveSelection()}]
                 [{if $oActiveSelection}]
                 <span class="float-left">[{$oActiveSelection->getName()}]</span>
                 [{elseif !$blHideDefault}]
@@ -27,8 +27,8 @@
             <ul class="dropdown-menu list-inline [{$sJsAction}][{if $sFieldName != "sel"}] vardrop[{/if}] d-block position-relative w-100 border-0" role="menu" style="z-index:0">
                 [{foreach from=$oSelections item=oSelection}]
                 <li class="[{if $oSelection->isDisabled()}] disabled js-disabled[{/if}] list-inline-item">
-                    <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn [{if $oSelection->isActive()}] btn-outline-primary[{else}]btn-outline-light[{/if}]">
-                        [{if $sSelType === 'seldrop'}]
+                    <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn[{if $oSelection->isActive()}] active[{/if}][{if $oSelection->isActive() || $blButtonDisplay}] btn-outline-primary[{else}] btn-outline-light[{/if}]">
+                        [{if $blButtonDisplay}]
                         [{$oSelection->getName()}]
                         [{else}]
                         <img src="[{$oSelection->getIcon()}]" alt="[{$oSelection->getName()}]" title="[{$oSelection->getName()}]" class="img-fluid variantlisticon" />

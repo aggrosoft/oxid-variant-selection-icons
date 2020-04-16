@@ -8,6 +8,12 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
         return in_array($this->getLabel(), $lists);
     }
 
+    public function isButtonSelectlist () {
+        $config = oxRegistry::getConfig();
+        $lists = $config->getShopConfVar('aButtonSelections', null, 'module:agvarianticons');
+        return in_array($this->getLabel(), $lists);
+    }
+
 	public function addIconVariant($sName, $sValue, $blDisabled, $blActive,$sIcon,$sIcon2)
     {
         if (($sName = trim($sName))) {
