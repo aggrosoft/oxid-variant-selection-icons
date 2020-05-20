@@ -26,7 +26,7 @@
         <input type="hidden" name="[{$sFieldName|default:"varselid"}][[{$iKey}]]" value="[{if $oActiveSelection}][{$oActiveSelection->getValue()}][{/if}]">
             <ul class="dropdown-menu list-inline [{$sJsAction}][{if $sFieldName != "sel"}] vardrop[{/if}] d-block position-relative w-100 border-0" role="menu" style="z-index:0">
                 [{foreach from=$oSelections item=oSelection}]
-                <li class="[{if $oSelection->isDisabled()}] disabled js-disabled[{/if}] list-inline-item">
+                <li class="[{if $oSelection->isDisabled()}] disabled js-disabled[{/if}] list-inline-item selectbox-entry-[{$sDisplayType}]">
                     <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn[{if $oSelection->isActive()}] active[{/if}][{if $oSelection->isActive() || $sDisplayType === 'button'}] btn-outline-primary[{else}] btn-outline-light[{/if}]">
                         [{assign var=sDisplayTemplate value='widget/product/selectbox-entry-'|cat:$sDisplayType|cat:'.tpl'}]
                         [{include file=$sDisplayTemplate}]
