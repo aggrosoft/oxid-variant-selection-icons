@@ -1,7 +1,7 @@
 {
   "name": "aggrosoft/oxid-variant-selection-icons",
   "type": "oxideshop-module",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Use Icons for variants selection instead of text only",
   "license": "MIT",
   "authors": [
