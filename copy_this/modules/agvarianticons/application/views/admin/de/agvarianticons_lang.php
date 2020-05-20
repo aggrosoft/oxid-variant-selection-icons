@@ -19,5 +19,5 @@ $aLang = array(
     'SHOP_MODULE_aColorMap' => 'Auswahl zu Hexwerten',
     'HELP_SHOP_MODULE_aColorMap' => 'Geben Sie hier die Zuordnung von Auswahl zu Hexwerten ein - Beispiel <br/>Rot => #ff0000<br/>Blau => #0000ff',
     'SHOP_MODULE_aImageMap' => 'Auswahl zu Bild',
-    'HELP_SHOP_MODULE_aColorMap' => 'Geben Sie hier die Zuordnung von Auswahl zu Bildpfad ein - Beispiel <br/>Gold => /out/pictures/icons/gold.png<br/>Bronze => /out/pictures/icons/bronze.png',
+    'HELP_SHOP_MODULE_aImageMap' => 'Geben Sie hier die Zuordnung von Auswahl zu Bildpfad ein - Beispiel <br/>Gold => /out/pictures/icons/gold.png<br/>Bronze => /out/pictures/icons/bronze.png',
 );
