@@ -1,7 +1,7 @@
 [{assign var="oSelections" value=$oSelectionList->getSelections()}]
 
 [{if $oSelections}]
-    <div class="form-group dropDown">
+    <div class="form-group dropDown selectbox-[{$sDisplayType}]">
         [{if !$blHideLabel}]
         <p class="variant-label"><strong>[{$oSelectionList->getLabel()}][{oxmultilang ident="COLON"}]</strong></p>
         [{/if}]
@@ -27,7 +27,7 @@
             <ul class="dropdown-menu list-inline [{$sJsAction}][{if $sFieldName != "sel"}] vardrop[{/if}] d-block position-relative w-100 border-0" role="menu" style="z-index:0">
                 [{foreach from=$oSelections item=oSelection}]
                 <li class="[{if $oSelection->isDisabled()}] disabled js-disabled[{/if}] list-inline-item">
-                    <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn[{if $oSelection->isActive()}] active[{/if}][{if $oSelection->isActive() || $blButtonDisplay}] btn-outline-primary[{else}] btn-outline-light[{/if}]">
+                    <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn[{if $oSelection->isActive()}] active[{/if}][{if $oSelection->isActive() || $sDisplayType === 'button'}] btn-outline-primary[{else}] btn-outline-light[{/if}]">
                         [{assign var=sDisplayTemplate value='widget/product/selectbox-entry-'|cat:$sDisplayType|cat:'.tpl'}]
                         [{include file=$sDisplayTemplate}]
                     </a>
