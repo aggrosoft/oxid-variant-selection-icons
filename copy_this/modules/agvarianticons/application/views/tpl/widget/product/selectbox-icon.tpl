@@ -28,11 +28,8 @@
                 [{foreach from=$oSelections item=oSelection}]
                 <li class="[{if $oSelection->isDisabled()}] disabled js-disabled[{/if}] list-inline-item">
                     <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="btn[{if $oSelection->isActive()}] active[{/if}][{if $oSelection->isActive() || $blButtonDisplay}] btn-outline-primary[{else}] btn-outline-light[{/if}]">
-                        [{if $blButtonDisplay}]
-                        [{$oSelection->getName()}]
-                        [{else}]
-                        <img src="[{$oSelection->getIcon()}]" alt="[{$oSelection->getName()}]" title="[{$oSelection->getName()}]" class="img-fluid variantlisticon" />
-                        [{/if}]
+                        [{assign var=sDisplayTemplate value='widget/product/selectbox-entry-'|cat:$sDisplayType|cat:'.tpl'}]
+                        [{include file=$sDisplayTemplate}]
                     </a>
                 </li>
                 [{/foreach}]

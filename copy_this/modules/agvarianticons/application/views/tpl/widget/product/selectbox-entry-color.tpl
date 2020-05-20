@@ -1,0 +1,1 @@
+<span class="badge variantlistcolor" style="background-color:[{$oSelectionList->getSelectionHexColor($oSelection->getName())}]"></span>
