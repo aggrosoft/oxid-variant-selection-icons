@@ -20,4 +20,6 @@ $aLang = array(
     'HELP_SHOP_MODULE_aColorMap' => 'Geben Sie hier die Zuordnung von Auswahl zu Hexwerten ein - Beispiel <br/>Rot => #ff0000<br/>Blau => #0000ff',
     'SHOP_MODULE_aImageMap' => 'Auswahl zu Bild',
     'HELP_SHOP_MODULE_aImageMap' => 'Geben Sie hier die Zuordnung von Auswahl zu Bildpfad ein - Beispiel <br/>Gold => /out/pictures/icons/gold.png<br/>Bronze => /out/pictures/icons/bronze.png',
+    'SHOP_MODULE_aCustomSelections' => 'Auswahl mit speziellem Template',
+    'HELP_SHOP_MODULE_aCustomSelections' => 'Geben Sie hier einen speziellen Template Typen an der für die Darstellung genutzt werden soll - Beispiel <br/>Farbe => mycustom<br/> lädt für Einträge das Template unter widget/product/selectbox-entry-mycustom.tpl',
 );

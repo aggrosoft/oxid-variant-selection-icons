@@ -18,6 +18,13 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
         return $this->isVariantIconList('aImageSelections');
     }
 
+    public function getCustomDisplayType () {
+        $config = oxRegistry::getConfig();
+        $lists = $config->getShopConfVar('aCustomSelections', null, 'module:agvarianticons');
+
+        return isset($lists[$this->getLabel()]) ? $lists[$this->getLabel()] : '';
+    }
+
     public function getVariantIconDisplayType () {
         if ($this->isIconSelectlist()) {
             return 'icon';
@@ -27,6 +34,8 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
             return 'color';
         } elseif ($this->isImageSelectlist()) {
             return 'image';
+        } else {
+            return $this->getCustomDisplayType();
         }
     }
 

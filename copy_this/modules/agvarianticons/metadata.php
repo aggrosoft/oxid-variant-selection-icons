@@ -33,6 +33,7 @@ $aModule = array(
         array('group' => 'agvarianticons_image', 'name' => 'aImageSelections', 'type' => 'arr',   'value' => ''),
         array('group' => 'agvarianticons_maps', 'name' => 'aColorMap', 'type' => 'aarr',   'value' => array()),
         array('group' => 'agvarianticons_maps', 'name' => 'aImageMap', 'type' => 'aarr',   'value' => array()),
+        array('group' => 'agvarianticons_maps', 'name' => 'aCustomSelections', 'type' => 'aarr',   'value' => array()),
     ),
     'blocks' => array(
         array('template' => 'page/details/inc/productmain.tpl','block'=>'details_productmain_selectlists','file'=>'/views/blocks/details_productmain_selectlists.tpl'),

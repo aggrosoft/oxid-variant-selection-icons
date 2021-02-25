@@ -34,7 +34,6 @@ class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_pa
 
     protected function _buildVariantSelectionsList($aVarSelects, $aSelections)
     {
-
         // creating selection lists
         foreach ($aVarSelects as $iKey => $sLabel) {
             $aVariantSelections[$iKey] = oxNew("oxVariantSelectList", $sLabel, $iKey);
