@@ -61,7 +61,7 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
         }
     }
 
-	public function addIconVariant($sName, $sValue, $blDisabled, $blActive,$sIcon,$sIcon2)
+	public function addIconVariant($sName, $sValue, $blDisabled, $blActive,$sIcon,$sIcon2, $fPrice)
     {
         if (($sName = trim($sName))) {
             $sKey = $sValue;
@@ -71,6 +71,7 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
                 $this->_aList[$sKey] = oxNew("oxSelection", $sName, $sValue, $blDisabled, $blActive);
                 $this->_aList[$sKey]->setIcon($sIcon);
                 $this->_aList[$sKey]->setIcon2($sIcon2);
+                $this->_aList[$sKey]->setPrice($fPrice);
             } else {
 
                 // overriding states

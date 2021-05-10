@@ -2,6 +2,16 @@
 
 class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_parent {
 
+    protected $amount = 1;
+
+    public function setAmount($amount) {
+        $this->amount = $amount;
+    }
+
+    public function getAmount() {
+        return $this->amount;
+    }
+
 	//Added Icon Url
 	protected function _fillVariantSelections($oVariantList, $iVarSelCnt, &$aFilter, $sActVariantId)
     {
@@ -14,6 +24,7 @@ class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_pa
             $blActive = ($sActVariantId === $oVariant->getId()) ? true : false;
             $sIcon = $oVariant->getIconUrl();
             $sIcon2 = $oVariant->getIconUrl(2);
+            $fPrice = $oVariant->getBasePrice($this->getAmount());
 
             for ($i = 0; $i < $iVarSelCnt; $i++) {
                 $sName = isset($aNames[$i]) ? trim($aNames[$i]) : false;
@@ -25,7 +36,7 @@ class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_pa
                         $aFilter[$i] = $sHash;
                     }
 
-                    $aSelections[$oVariant->getId()][$i] = array('name' => $sName, 'icon' => $sIcon, 'icon2' => $sIcon2, 'disabled' => null, 'active' => false, 'hash' => $sHash);
+                    $aSelections[$oVariant->getId()][$i] = array('name' => $sName, 'icon' => $sIcon, 'icon2' => $sIcon2, 'price' => $fPrice, 'disabled' => null, 'active' => false, 'hash' => $sHash);
                 }
             }
         }
@@ -42,7 +53,7 @@ class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_pa
         // building variant selections
         foreach ($aSelections as $aLineSelections) {
             foreach ($aLineSelections as $oPos => $aLine) {
-                $aVariantSelections[$oPos]->addIconVariant($aLine['name'], $aLine['hash'], $aLine['disabled'], $aLine['active'], $aLine['icon'], $aLine['icon2']);
+                $aVariantSelections[$oPos]->addIconVariant($aLine['name'], $aLine['hash'], $aLine['disabled'], $aLine['active'], $aLine['icon'], $aLine['icon2'], $aLine['price']);
             }
         }
 

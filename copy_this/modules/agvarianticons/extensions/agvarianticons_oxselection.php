@@ -4,6 +4,7 @@
 
 		protected $_sIcon;
 		protected $_sIcon2;
+		protected $_fPrice;
 
 		public function setIcon($sIcon){
 			$this->_sIcon = $sIcon;
@@ -20,5 +21,12 @@
 		public function getIcon2(){
 			return $this->_sIcon2;
 		}
-	
+
+        public function setPrice($fPrice){
+            $this->_fPrice = $fPrice;
+        }
+
+        public function getPrice(){
+            return $this->_fPrice;
+        }
 	}
