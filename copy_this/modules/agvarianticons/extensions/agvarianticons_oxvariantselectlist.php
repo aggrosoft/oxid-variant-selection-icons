@@ -10,6 +10,10 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
         return $this->isVariantIconList('aButtonSelections');
     }
 
+    public function isRadioSelectlist () {
+        return $this->isVariantIconList('aRadioSelections');
+    }
+
     public function isColorSelectlist () {
         return $this->isVariantIconList('aColorSelections');
     }
@@ -30,12 +34,26 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
             return 'icon';
         } elseif ($this->isButtonSelectlist()) {
             return 'button';
+        } elseif ($this->isRadioSelectlist()) {
+            return 'radio';
         } elseif ($this->isColorSelectlist()) {
             return 'color';
         } elseif ($this->isImageSelectlist()) {
             return 'image';
         } else {
             return $this->getCustomDisplayType();
+        }
+    }
+
+    public function getVariantIconDisplayTemplate () {
+        $displayType = $this->getVariantIconDisplayType();
+        if ($displayType) {
+            $utils = oxRegistry::getUtilsView();
+            $smarty = $utils->getSmarty();
+            $template = "widget/product/selectbox-$displayType.tpl";
+            if ($smarty->template_exists($template)) {
+                return $template;
+            }
         }
     }
 
@@ -53,11 +71,11 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
         }
     }
 
-    public function getSelectionImagePath ($value) {
+    public function getSelectionImagePath ($oSelection) {
         if ($this->isImageSelectlist()) {
             $config = oxRegistry::getConfig();
             $map = $config->getShopConfVar('aImageMap', null, 'module:agvarianticons');
-            return $map[$value];
+            return $map[$oSelection->getName()];
         }
     }
 

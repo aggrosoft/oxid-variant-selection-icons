@@ -3,19 +3,23 @@
 class agvarianticons_oxselectlist extends agvarianticons_oxselectlist_parent {
 
     public function isIconSelectlist () {
-        return $this->isVariantIconList('aIconSelections');
+        return $this->oxselectlist__agdisplaytype->value === 'icon' || $this->isVariantIconList('aIconSelections');
     }
 
     public function isButtonSelectlist () {
-        return $this->isVariantIconList('aButtonSelections');
+        return $this->oxselectlist__agdisplaytype->value === 'button' || $this->isVariantIconList('aButtonSelections');
+    }
+
+    public function isRadioSelectlist () {
+        return $this->oxselectlist__agdisplaytype->value === 'radio' || $this->isVariantIconList('aRadioSelections');
     }
 
     public function isColorSelectlist () {
-        return $this->isVariantIconList('aColorSelections');
+        return $this->oxselectlist__agdisplaytype->value === 'color' || $this->isVariantIconList('aColorSelections');
     }
 
     public function isImageSelectlist () {
-        return $this->isVariantIconList('aImageSelections');
+        return $this->oxselectlist__agdisplaytype->value === 'image' || $this->isVariantIconList('aImageSelections');
     }
 
     public function getCustomDisplayType () {
@@ -26,16 +30,33 @@ class agvarianticons_oxselectlist extends agvarianticons_oxselectlist_parent {
     }
 
     public function getVariantIconDisplayType () {
+        if ($this->oxselectlist__agdisplaytype->value) {
+            return $this->oxselectlist__agdisplaytype->value;
+        }
         if ($this->isIconSelectlist()) {
             return 'icon';
         } elseif ($this->isButtonSelectlist()) {
             return 'button';
+        } elseif ($this->isRadioSelectlist()) {
+            return 'radio';
         } elseif ($this->isColorSelectlist()) {
             return 'color';
         } elseif ($this->isImageSelectlist()) {
             return 'image';
         } else {
             return $this->getCustomDisplayType();
+        }
+    }
+
+    public function getVariantIconDisplayTemplate () {
+        $displayType = $this->getVariantIconDisplayType();
+        if ($displayType) {
+            $utils = oxRegistry::getUtilsView();
+            $smarty = $utils->getSmarty();
+            $template = "widget/product/selectbox-$displayType.tpl";
+            if ($smarty->template_exists($template)) {
+                return $template;
+            }
         }
     }
 

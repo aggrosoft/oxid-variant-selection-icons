@@ -1,7 +1,7 @@
 [{assign var="oSelections" value=$oSelectionList->getSelections()}]
 
 [{if $oSelections}]
-    <div class="form-group dropDown selectbox-icon">
+    <div class="form-group dropDown selectbox-radio">
         [{if !$blHideLabel}]
         <p class="variant-label"><strong>[{$oSelectionList->getLabel()}][{oxmultilang ident="COLON"}]</strong></p>
         [{/if}]
@@ -10,11 +10,11 @@
             <span class="float-left">[{$oActiveSelection->getName()}]</span>
             [{/if}]
         [{else}]
-        <div class="d-flex w-100 btn-group-toggle flex-wrap" data-toggle="buttons">
+        <ul class="list-unstyled">
             [{foreach from=$oSelections item=oSelection}]
-                [{include file="widget/product/selectbox-entry-icon.tpl"}]
+                [{include file="widget/product/selectbox-entry-radio.tpl"}]
             [{/foreach}]
-        </div>
+        </ul>
         [{/if}]
     </div>
 [{/if}]
