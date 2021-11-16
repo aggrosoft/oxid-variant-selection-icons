@@ -26,4 +26,5 @@ $aLang = array(
     'HELP_SHOP_MODULE_aCustomSelections' => 'Geben Sie hier einen speziellen Template Typen an der für die Darstellung genutzt werden soll - Beispiel <br/>Farbe => mycustom<br/> lädt für Einträge das Template unter widget/product/selectbox-entry-mycustom.tpl',
     'SELECTLIST_DISPLAYTYPE' => 'Anzeigetyp',
     'HELP_SELECTLIST_DISPLAYTYPE' => 'Geben Sie hier einen speziellen Template Typen an der für die Darstellung genutzt werden soll - Beispiel <br/>Farbe => mycustom<br/> lädt für Einträge das Template unter widget/product/selectbox-entry-mycustom.tpl<br/><br/>Standardtypen: <br/><ul><li>button</li><li>icon</li><li>radio</li><li>image</li><li>color</li></ul>',
+    'ARTICLE_EXTEND_DISABLED_COMBINATIONS' => 'Ausgeschlossene Auswahllisten Kombinationen'
 );

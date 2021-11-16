@@ -27,7 +27,8 @@ $aModule = array(
         'widget/product/selectbox-icon.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-icon.tpl',
         'widget/product/selectbox-image.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-image.tpl',
         'widget/product/selectbox-radio.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-radio.tpl',
-        'widget/product/selectbox-icon.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-icon.tpl',
+        'widget/product/selectbox-color.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-color.tpl',
+        'widget/product/selectbox-select.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-select.tpl',
         'widget/product/selectbox-entry-button.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-entry-button.tpl',
         'widget/product/selectbox-entry-radio.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-entry-radio.tpl',
         'widget/product/selectbox-entry-color.tpl' => 'agvarianticons/application/views/tpl/widget/product/selectbox-entry-color.tpl',
@@ -45,12 +46,13 @@ $aModule = array(
         array('group' => 'agvarianticons_image', 'name' => 'aImageSelections', 'type' => 'arr',   'value' => ''),
         array('group' => 'agvarianticons_maps', 'name' => 'aColorMap', 'type' => 'aarr',   'value' => array()),
         array('group' => 'agvarianticons_maps', 'name' => 'aImageMap', 'type' => 'aarr',   'value' => array()),
-        array('group' => 'agvarianticons_maps', 'name' => 'aCustomSelections', 'type' => 'aarr',   'value' => array()),
+        array('group' => 'agvarianticons_maps', 'name' => 'aCustomSelections', 'type' => 'aarr',   'value' => array())
     ),
     'blocks' => array(
         array('template' => 'page/details/inc/productmain.tpl','block'=>'details_productmain_selectlists','file'=>'/views/blocks/details_productmain_selectlists.tpl'),
         array('template' => 'page/details/inc/productmain.tpl','block'=>'details_productmain_variantselections','file'=>'/views/blocks/details_productmain_variantselections.tpl'),
-        array('template' => 'selectlist_main.tpl','block'=>'admin_selectlist_main_form','file'=>'/views/blocks/admin_selectlist_main_form.tpl')
+        array('template' => 'selectlist_main.tpl','block'=>'admin_selectlist_main_form','file'=>'/views/blocks/admin_selectlist_main_form.tpl'),
+        array('template' => 'article_extend.tpl','block'=>'admin_article_extend_form','file'=>'/views/blocks/admin_article_extend_form.tpl')
     )
 );
 ?>
