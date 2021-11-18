@@ -16,12 +16,31 @@
             [{/if}]
             [{assign var=sDisplayType value=$oList->getVariantIconDisplayType()}]
             [{assign var=sDisplayTemplate value="widget/product/selectbox-"|cat:$sDisplayType|cat:'.tpl'}]
-            [{if $sDisplayType && $smarty->template_exists($sDisplayTemplate)}]
+            [{if $sDisplayType }]
                 [{include file=$sDisplayTemplate oSelectionList=$oList iKey=$iKey blInDetails=true sDisplayType=$sDisplayType}]
             [{else}]
                 [{include file="widget/product/selectbox.tpl" oSelectionList=$oList iKey=$iKey blInDetails=true}]
             [{/if}]
 
         [{/foreach}]
+
+        [{capture assign="variantScript"}]
+            $(function(){
+                $('#variants :input').change(function () {
+                    var form = $('form.js-oxWidgetReload');
+                    var data = form.serialize() + "&" + $('#variants :input').serialize();
+
+                    $.ajax({
+                        url: form.attr('action'),
+                        data: data,
+                        success: function (result) {
+                            $('#details_container').replaceWith($(result));
+                        }
+                    })
+                });
+            });
+        [{/capture}]
+        [{oxscript add=$variantScript}]
+
     </div>
 [{/if}]

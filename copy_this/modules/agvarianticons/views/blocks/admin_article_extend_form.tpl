@@ -117,7 +117,7 @@
                             allCombinations.push($(this).data('combination'));
                         }
                     });
-                    $('#disabledCombinationInput').val(JSON.stringify(allCombinations));
+                    $('#disabledCombinationInput').val(JSON.stringify(allCombinations, null, 2));
                 }
 
                 function fillSelectionValues (optionSelect, valueSelect) {
