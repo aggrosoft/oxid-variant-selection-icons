@@ -68,11 +68,11 @@ class agvarianticons_oxselectlist extends agvarianticons_oxselectlist_parent {
         }
     }
 
-    public function getSelectionImagePath ($value) {
+    public function getSelectionImagePath ($oSelection) {
         if ($this->isImageSelectlist()) {
             $config = oxRegistry::getConfig();
             $map = $config->getShopConfVar('aImageMap', null, 'module:agvarianticons');
-            return $map[$value];
+            return $map[$oSelection->getName()];
         }
     }
 
