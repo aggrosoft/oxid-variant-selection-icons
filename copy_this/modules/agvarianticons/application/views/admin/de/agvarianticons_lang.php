@@ -7,6 +7,8 @@ $iLangNr = 0;
 // -------------------------------
 $aLang = array(
     'charset' => 'UTF-8',
+    'SHOP_MODULE_GROUP_agvarianticons_settings' => 'Einstellungen',
+    'SHOP_MODULE_blHidePriceText' => 'Preis hinter Auswahl ausblenden',
     'SHOP_MODULE_GROUP_agvarianticons_main' => 'Auswahl die als Icon angezeigt werden soll',
     'SHOP_MODULE_aIconSelections' => 'Name der Auswahl (eine pro Zeile)',
     'SHOP_MODULE_GROUP_agvarianticons_btn' => 'Auswahl die als Button angezeigt werden soll',

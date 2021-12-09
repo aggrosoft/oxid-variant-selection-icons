@@ -6,6 +6,15 @@
 		protected $_sIcon2;
 		protected $_fPrice;
 
+        public function getName() {
+            $config = oxRegistry::getConfig();
+            if ( $config->getShopConfVar('blHidePriceText', null, 'module:agvarianticons') ) {
+                return preg_replace('/(.*) \+\d*\,\d* .*/m', '$1', parent::getName());
+            } else {
+                return parent::getName();
+            }
+        }
+
 		public function setIcon($sIcon){
 			$this->_sIcon = $sIcon;
 		}

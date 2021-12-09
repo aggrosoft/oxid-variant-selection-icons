@@ -39,6 +39,7 @@ $aModule = array(
         'onActivate'   => 'agvarianticons_installer::onActivate',
     ),
     'settings' => array(
+        array('group' => 'agvarianticons_settings', 'name' => 'blHidePriceText', 'type' => 'bool',   'value' => false),
         array('group' => 'agvarianticons_main', 'name' => 'aIconSelections', 'type' => 'arr',   'value' => ''),
         array('group' => 'agvarianticons_btn', 'name' => 'aButtonSelections', 'type' => 'arr',   'value' => ''),
         array('group' => 'agvarianticons_radio', 'name' => 'aRadioSelections', 'type' => 'arr',   'value' => ''),

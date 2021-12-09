@@ -11,6 +11,7 @@
         [{/if}]
         [{else}]
         <select class="custom-select" name="[{$sFieldName|default:"varselid"}][[{$iKey}]]">
+            [{if $blAllowEmptyValue}]<option>[{oxmultilang ident="CHOOSE_VARIANT"}]</option>[{/if}]
             [{foreach from=$oSelections item=oSelection}]
             <option value="[{$oSelection->getValue()}]" [{if $oSelection->isActive()}]selected[{/if}]>[{$oSelection->getName()}]</option>
             [{/foreach}]
