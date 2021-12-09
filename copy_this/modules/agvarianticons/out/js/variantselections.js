@@ -8,6 +8,7 @@ $(function(){
       data: data,
       success: function (result) {
         $('#details_container').replaceWith($(result));
+        $('body').trigger('variants:reloaded');
       }
     })
   });
