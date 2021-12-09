@@ -1,5 +1,5 @@
 $(function(){
-  $('#variants :input').change(function () {
+  $('body').on('change', '#variants :input', function () {
     var form = $('form.js-oxWidgetReload');
     var data = form.serialize() + "&" + $('#variants :input').serialize();
 
