@@ -21,7 +21,7 @@
 
         [{/foreach}]
 
-        [{oxscript include=$oViewConf->getModuleUrl('agvariantselections','out/js/variantselections.js')}]
+        [{oxscript include=$oViewConf->getModuleUrl('agvarianticons','out/js/variantselections.js')}]
 
     </div>
 [{/if}]
