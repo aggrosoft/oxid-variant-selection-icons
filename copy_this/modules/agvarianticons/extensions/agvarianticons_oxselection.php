@@ -9,7 +9,7 @@
         public function getName() {
             $config = oxRegistry::getConfig();
             if ( $config->getShopConfVar('blHidePriceText', null, 'module:agvarianticons') ) {
-                return preg_replace('/(.*) \+\d*\,\d* .*/m', '$1', parent::getName());
+                return preg_replace('/(.*) [\+|-]\d*\,\d* .*/m', '$1', parent::getName());
             } else {
                 return parent::getName();
             }
@@ -36,6 +36,10 @@
         }
 
         public function getPrice(){
-            return $this->_fPrice;
+            if ($this->_fPrice) {
+                return $this->_fPrice;
+            } elseif(preg_match('/.* ([\+|-]\d*\,\d* .*)/', parent::getName(), $matches)) {
+                return trim($matches[1]);
+            }
         }
 	}
