@@ -61,19 +61,19 @@ class agvarianticons_oxselectlist extends agvarianticons_oxselectlist_parent {
     }
 
     public function getSelectionHexColor ($value) {
-        if ($this->isColorSelectlist()) {
+        // if ($this->isColorSelectlist()) {
             $config = oxRegistry::getConfig();
             $map = $config->getShopConfVar('aColorMap', null, 'module:agvarianticons');
             return $map[$value];
-        }
+        // }
     }
 
     public function getSelectionImagePath ($oSelection) {
-        if ($this->isImageSelectlist()) {
+        // if ($this->isImageSelectlist()) {
             $config = oxRegistry::getConfig();
             $map = $config->getShopConfVar('aImageMap', null, 'module:agvarianticons');
             return $map[$oSelection->getName()];
-        }
+        // }
     }
 
     protected function isVariantIconList ($setting) {

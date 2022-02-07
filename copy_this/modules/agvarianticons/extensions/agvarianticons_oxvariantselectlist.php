@@ -63,20 +63,21 @@ class agvarianticons_oxvariantselectlist extends agvarianticons_oxvariantselectl
         return in_array($this->getLabel(), $lists);
     }
 
+
     public function getSelectionHexColor ($value) {
-        if ($this->isColorSelectlist()) {
-            $config = oxRegistry::getConfig();
-            $map = $config->getShopConfVar('aColorMap', null, 'module:agvarianticons');
-            return $map[$value];
-        }
+        // if ($this->isColorSelectlist()) {
+        $config = oxRegistry::getConfig();
+        $map = $config->getShopConfVar('aColorMap', null, 'module:agvarianticons');
+        return $map[$value];
+        // }
     }
 
     public function getSelectionImagePath ($oSelection) {
-        if ($this->isImageSelectlist()) {
-            $config = oxRegistry::getConfig();
-            $map = $config->getShopConfVar('aImageMap', null, 'module:agvarianticons');
-            return $map[$oSelection->getName()];
-        }
+        // if ($this->isImageSelectlist()) {
+        $config = oxRegistry::getConfig();
+        $map = $config->getShopConfVar('aImageMap', null, 'module:agvarianticons');
+        return $map[$oSelection->getName()];
+        // }
     }
 
 	public function addIconVariant($sName, $sValue, $blDisabled, $blActive,$sIcon,$sIcon2, $fPrice)

@@ -1,5 +1,5 @@
 [{assign var="oSelections" value=$oSelectionList->getSelections()}]
-
+[{assign var="oActiveSelection" value=$oSelectionList->getActiveSelection()}]
 [{if $oSelections}]
     <div class="form-group dropDown selectbox-color">
         [{if !$blHideLabel}]
