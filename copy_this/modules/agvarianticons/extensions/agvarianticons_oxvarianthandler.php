@@ -1,5 +1,7 @@
 <?php
 
+use OxidEsales\Eshop\Core\Registry;
+
 class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_parent {
 
     protected $amount = 1;
@@ -24,7 +26,8 @@ class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_pa
             $blActive = ($sActVariantId === $oVariant->getId()) ? true : false;
             $sIcon = $oVariant->getIconUrl();
             $sIcon2 = $oVariant->getIconUrl(2);
-            $fPrice = $oVariant->getBasePrice($this->getAmount());
+            $oPrice = $oVariant->getPrice($this->getAmount());
+            $fPrice = $oPrice->getPrice();
 
             for ($i = 0; $i < $iVarSelCnt; $i++) {
                 $sName = isset($aNames[$i]) ? trim($aNames[$i]) : false;
@@ -58,6 +61,17 @@ class agvarianticons_oxvarianthandler extends agvarianticons_oxvarianthandler_pa
         }
 
         return $aVariantSelections;
+    }
+
+    protected function isPriceViewModeNetto()
+    {
+        $blResult = (bool) Registry::getConfig()->getConfigParam('blShowNetPrice');
+        $oUser = $this->getUser();
+        if ($oUser) {
+            $blResult = $oUser->isPriceViewModeNetto();
+        }
+
+        return $blResult;
     }
 
 }
